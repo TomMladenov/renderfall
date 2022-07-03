@@ -406,7 +406,7 @@ int main(int argc, char *argv[]) {
         printf("Writing PNG header..\n");
     png_init_io(png_ptr, writefp);
     png_set_IHDR(png_ptr, info_ptr, params.fftsize, params.frames, 8,
-                 PNG_COLOR_TYPE_RGB, PNG_INTERLACE_NONE,
+                 PNG_COLOR_TYPE_GRAY, PNG_INTERLACE_NONE,
                  PNG_COMPRESSION_TYPE_BASE, PNG_FILTER_TYPE_BASE);
     png_write_info(png_ptr, info_ptr);
 

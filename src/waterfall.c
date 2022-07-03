@@ -56,12 +56,12 @@ void waterfall(png_structp png_ptr, FILE *fp, waterfall_params_t params) {
 
         // first half (negative frequencies)
         for (x = 0; x < half; x++) {
-            render_complex(&(row[x * 3]), out[x + half]);
+            render_complex(&(row[x]), out[x + half]);
         }
 
         // second half (positive frequencies)
         for (x = half; x < params.fftsize; x++) {
-            render_complex(&(row[x * 3]), out[x - half]);
+            render_complex(&(row[x]), out[x - half]);
         }
 
         png_write_row(png_ptr, row);
